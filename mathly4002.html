@@ -50,9 +50,100 @@
         .links a:hover {
             text-decoration: underline;
         }
+
+        /* Forum styling */
+        .forum {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .forum h2 {
+            font-size: 18px;
+            margin: 10px 0 10px;
+        }
+        .forum textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            resize: none;
+            font-size: 14px;
+        }
+        .forum button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .forum button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Message Box Styling */
+        .messages {
+            margin-top: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 14px;
+        }
+        .messages p {
+            margin: 5px 0;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .telegram-link {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .telegram-link img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .telegram-link a {
+            color: #1E90FF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .telegram-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <!-- Forum Box -->
+    <div class="forum">
+        <!-- Telegram Link -->
+        <div class="telegram-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Icon">
+            <a href="https://t.me/+5TfqVcQpCnVlY2Nl" target="_blank">Join our Telegram Channel</a>
+        </div>
+
+        <h2>Forum: Post Your Queries!</h2>
+        <textarea id="queryInput" rows="4" placeholder="Enter your query here..." required></textarea>
+        <button onclick="submitQuery()">Submit</button>
+        
+        <!-- Messages Box -->
+        <div class="messages" id="messageBox">
+            <!-- Past messages will appear here -->
+        </div>
+    </div>
+
     <div class="container">
         <h1>Teaching Resources Selector</h1>
         <label for="form">Select Form:</label>
@@ -75,14 +166,16 @@
     <script>
         const topics = {
             form2: [
-                { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises", urlQuizes: "https://example.com/form2/3d-quizzes" },
-                { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises", urlQuizes: "https://example.com/form2/cartesian-quizzes" }
+                { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises",urlQuizes: "https://example.com/form2/3d-exercises" },
+                { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises",urlQuizes: "https://example.com/form2/3d-exercises" }
             ],
             form4: [
-                { name: "Operation on Sets", urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view?usp=sharing", urlExercises: "https://example.com/form4/sets-exercises", urlQuizes: "https://example.com/form4/sets-quizzes" },
+                { name: "Operation on Sets", urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view?usp=sharing", urlExercises: "https://example.com/form4/quadratic-exercises" ,urlQuizes: "https://example.com/form2/3d-exercises" },
                 { name: "Logical Reasoning", urlNotes: "https://drive.google.com/drive/folders/1qVZswQ8K2NAmygytC01_Rp9NEYS8YS-d?usp=sharing", urlExercises: "https://drive.google.com/drive/folders/1qkOx2o7r7ZVaGDYrTlZwcRMGAJdono_B?usp=sharing", urlQuizes: "https://drive.google.com/drive/folders/14gOTax2azSQUzff7pZXkt5OZNa4NVG8J?usp=sharing" }
             ]
         };
+
+        const messages = []; // Array to store past messages
 
         function updateTopics() {
             const form = document.getElementById("form").value;
@@ -117,19 +210,34 @@
                     const exercisesLink = document.createElement("a");
                     exercisesLink.href = selectedTopic.urlExercises;
                     exercisesLink.target = "_blank";
-                    exercisesLink.textContent = "View Exercises";
-
-                    const quizesLink = document.createElement("a");
-                    quizesLink.href = selectedTopic.urlQuizes;
-                    quizesLink.target = "_blank";
-                    quizesLink.textContent = "View Quizzes";
-
+                    exercisesLink.textContent = "View Exercises";              
+                    
+                    const QuizesLink = document.createElement("a");
+                    QuizesLink.href = selectedTopic.urlQuizess;
+                    QuizesLink.target = "_blank";
+                    QuizesLink.textContent = "View Quizes";
+                    
                     linksDiv.appendChild(notesLink);
                     linksDiv.appendChild(exercisesLink);
-                    linksDiv.appendChild(quizesLink);
+                    linksDiv.appendChild(QuizesLink);
                 }
             } else {
                 linksDiv.textContent = "Please select both Form and Topic.";
+            }
+        }
+
+        function submitQuery() {
+            const queryInput = document.getElementById("queryInput").value;
+            const messageBox = document.getElementById("messageBox");
+
+            if (queryInput.trim() !== "") {
+                messages.push(queryInput); // Save the message
+                const message = document.createElement("p");
+                message.textContent = queryInput;
+                messageBox.appendChild(message); // Display in the messages box
+                document.getElementById("queryInput").value = ""; // Clear input
+            } else {
+                alert("Please enter a query before submitting.");
             }
         }
     </script>
