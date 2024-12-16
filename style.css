@@ -6,7 +6,6 @@ body {
     background-size: cover;
     color: #fff;
 }
-
 .container {
     max-width: 600px;
     margin: auto;
@@ -15,7 +14,6 @@ body {
     border-radius: 10px;
     margin-top: 100px;
 }
-
 select, button {
     margin: 10px 0;
     padding: 10px;
@@ -24,33 +22,29 @@ select, button {
     border: none;
     border-radius: 5px;
 }
-
 select {
     background-color: #ddd;
     color: #000;
 }
-
 button {
     background-color: #007BFF;
     color: #fff;
     cursor: pointer;
 }
-
 button:hover {
     background-color: #0056b3;
 }
-
 .links a {
     display: block;
     margin: 5px 0;
     color: #1E90FF;
     text-decoration: none;
 }
-
 .links a:hover {
     text-decoration: underline;
 }
 
+/* Forum styling */
 .forum {
     position: absolute;
     top: 20px;
@@ -61,12 +55,10 @@ button:hover {
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 .forum h2 {
     font-size: 18px;
     margin: 10px 0 10px;
 }
-
 .forum textarea {
     width: 100%;
     padding: 10px;
@@ -76,22 +68,6 @@ button:hover {
     resize: none;
     font-size: 14px;
 }
-
-.forum button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.forum button:hover {
-    background-color: #0056b3;
-}
-
 .messages {
     margin-top: 10px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -101,47 +77,27 @@ button:hover {
     overflow-y: auto;
     font-size: 14px;
 }
-
 .messages p {
     margin: 5px 0;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
 }
-
-.messages p button {
-    background-color: #FF6347;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.messages p button:hover {
-    background-color: #FF4500;
-}
-
 .telegram-link {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
-
 .telegram-link img {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
-
 .telegram-link a {
     color: #1E90FF;
     text-decoration: none;
     font-size: 14px;
 }
-
 .telegram-link a:hover {
     text-decoration: underline;
 }
