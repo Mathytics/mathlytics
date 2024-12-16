@@ -234,18 +234,38 @@
         }
 
         function submitQuery() {
-            const queryInput = document.getElementById("queryInput").value;
-            const messageBox = document.getElementById("messageBox");
+            const socket = io(); // Connect to the server
 
-            if (queryInput.trim() !== "") {
-                messages.push(queryInput); // Save the message
-                const message = document.createElement("p");
-                message.textContent = queryInput;
-                messageBox.appendChild(message); // Display in the messages box
-                document.getElementById("queryInput").value = ""; // Clear input
-            } else {
-                alert("Please enter a query before submitting.");
-            }
+// Load past messages when connected
+socket.on("loadMessages", (pastMessages) => {
+    const messageBox = document.getElementById("messageBox");
+    messageBox.innerHTML = ""; // Clear previous content
+    pastMessages.forEach((msg) => {
+        const message = document.createElement("p");
+        message.textContent = msg;
+        messageBox.appendChild(message);
+    });
+});
+
+// Display new messages in real-time
+socket.on("messageReceived", (message) => {
+    const messageBox = document.getElementById("messageBox");
+    const newMessage = document.createElement("p");
+    newMessage.textContent = message;
+    messageBox.appendChild(newMessage);
+    messageBox.scrollTop = messageBox.scrollHeight; // Auto-scroll
+});
+
+function submitQuery() {
+    const queryInput = document.getElementById("queryInput").value;
+    if (queryInput.trim() !== "") {
+        socket.emit("newMessage", queryInput); // Send message to server
+        document.getElementById("queryInput").value = ""; // Clear input
+    } else {
+        alert("Please enter a query before submitting.");
+    }
+}
+
         }
     </script>
 </body>
