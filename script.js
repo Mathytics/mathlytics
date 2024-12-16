@@ -18,13 +18,13 @@ const topics = {
          urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view?usp=sharing",
          urlExercises: "https://example.com/form4/quadratic-exercises",
          urlQuizes: "https://example.com/form2/3d-exercises",
-         urlPastYear: "https://example.com/form2/3d-exercises"
+         urlPastYear: "https://example.com/form2/3d-exercises" 
         },
         { name: "Logical Reasoning",
          urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn-eFdZrZA9jez9ynEvshX?usp=drive_link",
          urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view?usp=drive_link",
          urlQuizes: "https://quizizz.com/join?gc=33531104",
-         urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o?usp=drive_link"
+         urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o?usp=drive_link" 
         }
     ]
 };
@@ -90,43 +90,4 @@ function showLinks() {
             const quizzesLink = document.createElement("a");
             quizzesLink.href = selectedTopic.urlQuizes;
             quizzesLink.target = "_blank";
-            quizzesLink.textContent = "View Quizzes";
-
-            const pastYearLink = document.createElement("a");
-            pastYearLink.href = selectedTopic.urlPastYear;
-            pastYearLink.target = "_blank";
-            pastYearLink.textContent = "View Past Year";
-
-            linksDiv.appendChild(notesLink);
-            linksDiv.appendChild(exercisesLink);
-            linksDiv.appendChild(quizzesLink);
-            linksDiv.appendChild(pastYearLink);
-        }
-    } else {
-        linksDiv.textContent = "Please select both Form and Topic.";
-    }
-}
-
-function submitQuery() {
-    const queryInput = document.getElementById("queryInput").value;
-    if (queryInput.trim() !== "") {
-        const messageBox = document.getElementById("messageBox");
-        const newMessage = document.createElement("p");
-        newMessage.textContent = queryInput;
-
-        // Add a delete button for the new query
-        const deleteBtn = document.createElement("button");
-        deleteBtn.classList.add("delete-btn");
-        deleteBtn.textContent = "Delete";
-        deleteBtn.onclick = function() {
-            messageBox.removeChild(newMessage);
-        };
-
-        newMessage.appendChild(deleteBtn);
-        messageBox.appendChild(newMessage);
-        messageBox.scrollTop = messageBox.scrollHeight; // Auto-scroll
-        document.getElementById("queryInput").value = ""; // Clear input
-    } else {
-        alert("Please enter a query before submitting.");
-    }
-}
+            quizzesLink.textContent =
