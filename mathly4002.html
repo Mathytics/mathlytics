@@ -4,131 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching Resources Selector</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://img.freepik.com/free-vector/empty-classroom-interior-with-chalkboard_1308-65378.jpg?semt=ais_hybrid') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            margin-top: 100px;
-        }
-        select, button {
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-        }
-        select {
-            background-color: #ddd;
-            color: #000;
-        }
-        button {
-            background-color: #007BFF;
-            color: #fff;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .links a {
-            display: block;
-            margin: 5px 0;
-            color: #1E90FF;
-            text-decoration: none;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Forum styling */
-        .forum {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.9);
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .forum h2 {
-            font-size: 18px;
-            margin: 10px 0 10px;
-        }
-        .forum textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: none;
-            resize: none;
-            font-size: 14px;
-        }
-        .forum button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .forum button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Message Box Styling */
-        .messages {
-            margin-top: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 5px;
-            max-height: 200px;
-            overflow-y: auto;
-            font-size: 14px;
-        }
-        .messages p {
-            margin: 5px 0;
-            padding: 5px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-        }
-        .telegram-link {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .telegram-link img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-        .telegram-link a {
-            color: #1E90FF;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .telegram-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Forum Box -->
     <div class="forum">
-        <!-- Telegram Link -->
         <div class="telegram-link">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Icon">
             <a href="https://t.me/+5TfqVcQpCnVlY2Nl" target="_blank">Join our Telegram Channel</a>
@@ -138,10 +18,7 @@
         <textarea id="queryInput" rows="4" placeholder="Enter your query here..." required></textarea>
         <button onclick="submitQuery()">Submit</button>
         
-        <!-- Messages Box -->
-        <div class="messages" id="messageBox">
-            <!-- Past messages will appear here -->
-        </div>
+        <div class="messages" id="messageBox"></div>
     </div>
 
     <div class="container">
@@ -163,110 +40,6 @@
         <div class="links" id="links"></div>
     </div>
 
-    <script>
-        const topics = {
-            form2: [
-                { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises",urlQuizes: "https://example.com/form2/3d-exercises",urlPastYear: "https://example.com/form2/3d-exercises" },
-                { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises",urlQuizes: "https://example.com/form2/3d-exercises",urlPastYear: "https://example.com/form2/3d-exercises" }
-            ],
-            form4: [
-                { name: "Operation on Sets", urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view?usp=sharing", urlExercises: "https://example.com/form4/quadratic-exercises" ,urlQuizes: "https://example.com/form2/3d-exercises" ,urlPastYear: "https://example.com/form2/3d-exercises"},
-                { name: "Logical Reasoning", urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn-eFdZrZA9jez9ynEvshX?usp=drive_link", urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view?usp=drive_link", urlQuizes: "https://quizizz.com/join?gc=33531104",urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o?usp=drive_link" }
-            ]
-        };
-
-        const messages = []; // Array to store past messages
-
-        function updateTopics() {
-            const form = document.getElementById("form").value;
-            const topicSelect = document.getElementById("topic");
-            topicSelect.innerHTML = "<option value=''>-- Select Topic --</option>";
-
-            if (form && topics[form]) {
-                topics[form].forEach(topic => {
-                    const option = document.createElement("option");
-                    option.value = topic.name;
-                    option.textContent = topic.name;
-                    topicSelect.appendChild(option);
-                });
-            }
-        }
-
-        function showLinks() {
-            const form = document.getElementById("form").value;
-            const topicName = document.getElementById("topic").value;
-            const linksDiv = document.getElementById("links");
-
-            linksDiv.innerHTML = ""; // Clear previous links
-
-            if (form && topicName) {
-                const selectedTopic = topics[form].find(topic => topic.name === topicName);
-                if (selectedTopic) {
-                    const notesLink = document.createElement("a");
-                    notesLink.href = selectedTopic.urlNotes;
-                    notesLink.target = "_blank";
-                    notesLink.textContent = "View Notes";
-
-                    const exercisesLink = document.createElement("a");
-                    exercisesLink.href = selectedTopic.urlExercises;
-                    exercisesLink.target = "_blank";
-                    exercisesLink.textContent = "View Exercises";              
-                    
-    const QuizesLink = document.createElement("a");
-    QuizesLink.href = selectedTopic.urlQuizes; // Corrected key name
-    QuizesLink.target = "_blank";
-    QuizesLink.textContent = "View Quizzes";
-
-                        const PastYearLink = document.createElement("a");
-    PastYearLink.href = selectedTopic.urlPastYear; // Corrected key name
-    PastYearLink.target = "_blank";
-   PastYearLink.textContent = "View Past Year";
-
-                    
-    linksDiv.appendChild(notesLink);
-    linksDiv.appendChild(exercisesLink);
-    linksDiv.appendChild(QuizesLink);
-    linksDiv.appendChild(PastYearLink);
-                }
-            } else {
-                linksDiv.textContent = "Please select both Form and Topic.";
-            }
-        }
-
-        function submitQuery() {
-            const socket = io(); // Connect to the server
-
-// Load past messages when connected
-socket.on("loadMessages", (pastMessages) => {
-    const messageBox = document.getElementById("messageBox");
-    messageBox.innerHTML = ""; // Clear previous content
-    pastMessages.forEach((msg) => {
-        const message = document.createElement("p");
-        message.textContent = msg;
-        messageBox.appendChild(message);
-    });
-});
-
-// Display new messages in real-time
-socket.on("messageReceived", (message) => {
-    const messageBox = document.getElementById("messageBox");
-    const newMessage = document.createElement("p");
-    newMessage.textContent = message;
-    messageBox.appendChild(newMessage);
-    messageBox.scrollTop = messageBox.scrollHeight; // Auto-scroll
-});
-
-function submitQuery() {
-    const queryInput = document.getElementById("queryInput").value;
-    if (queryInput.trim() !== "") {
-        socket.emit("newMessage", queryInput); // Send message to server
-        document.getElementById("queryInput").value = ""; // Clear input
-    } else {
-        alert("Please enter a query before submitting.");
-    }
-}
-
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
