@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching Resources Selector</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Forum Box -->
     <div class="forum">
+        <!-- Telegram Link -->
         <div class="telegram-link">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png" alt="Telegram Icon">
             <a href="https://t.me/+5TfqVcQpCnVlY2Nl" target="_blank">Join our Telegram Channel</a>
@@ -18,7 +19,10 @@
         <textarea id="queryInput" rows="4" placeholder="Enter your query here..." required></textarea>
         <button onclick="submitQuery()">Submit</button>
         
-        <div class="messages" id="messageBox"></div>
+        <!-- Messages Box -->
+        <div class="messages" id="messageBox">
+            <!-- Past messages will appear here -->
+        </div>
     </div>
 
     <div class="container">
