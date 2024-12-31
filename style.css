@@ -133,6 +133,7 @@ button:hover {
   padding: 10px;
   overflow-y: auto; /* Allows scrolling for long messages */
   border-bottom: 1px solid #ccc;
+  color: black; /* Sets text color in chat body to black */
 }
 
 .chat-footer {
@@ -147,13 +148,18 @@ button:hover {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: black; /* Sets input text color to black */
+}
+
+.chat-footer input::placeholder {
+  color: black; /* Sets placeholder text color to black */
 }
 
 .chat-footer button {
   margin-left: 5px;
   padding: 5px 10px;
-  background-color: #000000;
-  color: white;
+  background-color: #007bff;
+  color: black; /* Sets button text color to black */
   border: none;
   border-radius: 5px;
   cursor: pointer;
