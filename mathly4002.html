@@ -26,27 +26,31 @@
     </div>
 
     <div class="container">
-        <h1>Teaching Resources Selector</h1>
+         <h2>Teaching Resources Selector</h2>
+    <div>
         <label for="form">Select Form:</label>
-        <select id="form" onchange="updateSubtopics()">
+        <select id="form" onchange="updateTopics()">
             <option value="">-- Select Form --</option>
             <option value="form2">Form 2</option>
             <option value="form4">Form 4</option>
         </select>
-
+    </div>
+    <div>
         <label for="topic">Select Topic:</label>
-        <select id="topic">
+        <select id="topic" onchange="updateSubtopics()">
             <option value="">-- Select Topic --</option>
         </select>
-
+    </div>
+    <div>
         <label for="subtopic">Select Subtopic:</label>
         <select id="subtopic">
             <option value="">-- Select Subtopic --</option>
         </select>
-
+    </div>
+    <div>
         <button onclick="showLinks()">View Resources</button>
-
-        <div class="links" id="links"></div>
+    </div>
+    <div id="links"></div>
     </div>
 
     <!-- Chatbox Container -->
