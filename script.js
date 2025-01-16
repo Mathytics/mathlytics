@@ -1,34 +1,30 @@
 const topics = {
-    form2: [
-        { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" },
-        { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" }
-    ],
     form4: [
         { 
-            name: "Operation on Sets", 
-            urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", 
-            urlExercises: "https://example.com/form4/sets-exercises", 
-            urlQuizes: "https://example.com/form4/quizzes", 
-            urlPastYear: "https://example.com/form4/past-year",
+            name: "Logical Reasoning", 
             subtopics: [
                 { 
-                    name: "4.1: Three Dimensional Shapes", 
-                    urlNotes: "https://example.com/form2/3d-notes", 
-                    urlExercises: "https://example.com/form2/3d-exercises", 
-                    urlQuizes: "https://example.com/form2/quizzes", 
-                    urlPastYear: "https://example.com/form2/past-year" 
+                    name: "3.1: Statements", 
+                    urlNotes: "https://drive.google.com/file/d/1XN9v0JmYM5CTCup2ZH_MknkLENjeWrZh/view?usp=drive_link", 
+                    urlExercises: "https://drive.google.com/file/d/1fH6DfVaYVW81luXEhGXeLAewIfz5ZVXY/view?usp=drive_link", 
+                    urlQuizes: "https://quizizz.com/join?gc=26597520", 
+                    urlPastYear: "https://drive.google.com/drive/folders/1U7QRjrQ3h-NyCJkrzAsbDJvg15AQWgem?usp=drive_link",
+                    urlRPH: "https://docs.google.com/document/d/13GOjOCprZSO9REfblE2EweZbQp1CDb-B/edit?usp=drive_link&ouid=100255213395062774814&rtpof=true&sd=true",
+                    urlInteractive:"https://venn-vision.vercel.app/"
                 },
                 { 
-                    name: "4.2: Cartesian Plane", 
-                    urlNotes: "https://example.com/form2/cartesian-notes", 
-                    urlExercises: "https://example.com/form2/cartesian-exercises", 
-                    urlQuizes: "https://example.com/form2/quizzes", 
-                    urlPastYear: "https://example.com/form2/past-year" 
+                    name: "3.2: Arguments", 
+                    urlNotes: "https://drive.google.com/file/d/1TZwf4Cg0AYcJ6ZuT6GBE9QtKrkaOInb1/view?usp=drive_link", 
+                    urlExercises: "https://drive.google.com/file/d/1igMXsahIq7amwOmNo8APHtu9lpZaYXzi/view?usp=drive_link", 
+                    urlQuizes: "https://quizizz.com/join?gc=05945488", 
+                    urlPastYear: "https://drive.google.com/drive/folders/1U7QRjrQ3h-NyCJkrzAsbDJvg15AQWgem?usp=drive_link",
+                    urlRPH: "https://docs.google.com/document/d/13GOjOCprZSO9REfblE2EweZbQp1CDb-B/edit?usp=drive_link&ouid=100255213395062774814&rtpof=true&sd=true",
+                    urlInteractive:"https://venn-vision.vercel.app/"
                 }
             ]
         },
         { 
-            name: "Logical Reasoning", 
+            name: "Operation on Sets", 
             urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn", 
             urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view", 
             urlQuizes: "https://quizizz.com/join?gc=33531104", 
@@ -92,6 +88,8 @@ function showLinks() {
                 <a href="${selectedTopic.urlExercises}" target="_blank">View Exercises</a>
                 <a href="${selectedTopic.urlQuizes}" target="_blank">View Quizzes</a>
                 <a href="${selectedTopic.urlPastYear}" target="_blank">View Past Year</a>
+                <a href="${selectedTopic.urlRPH}" target="_blank">E-RPH</a>
+                <a href="${selectedTopic.urlInteractive}" target="_blank">Interactive Lesson</a>
             `;
         }
     } else {
