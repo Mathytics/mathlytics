@@ -100,6 +100,7 @@ function showLinks() {
 }
 
 
+
 // LocalStorage for forum messages
 function loadMessages() {
     const messages = JSON.parse(localStorage.getItem("messages")) || [];
