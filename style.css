@@ -38,30 +38,6 @@ button:hover {
         margin-top: 20px;
     }
 /* link styling */
-/* Styling for the links */
-
-        #links {
-            margin-top: 20px;
-        }
-
-        #links a {
-            display: block;
-            margin-bottom: 10px;
-            padding: 10px 15px;
-            font-size: 16px;
-            color: white; /* Text color */
-            background-color: #007bff; /* Background color */
-            text-decoration: none;
-            border: 2px solid white; /* Adds a white border */
-            border-radius: 5px; /* Adds rounded corners */
-            text-align: center;
-            width: fit-content; /* Adjusts width to fit content */
-        }
-
-        #links a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            border-color: #ffcc00; /* Yellow border on hover */
-        }
 
 
 /* Forum styling */
