@@ -9,6 +9,17 @@ const topics = {
     ]
 };
 
+const subtopics = {
+    4.1: [
+        { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" },
+        { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" }
+    ],
+    4.2: [
+        { name: "Operation on Sets", urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", urlExercises: "https://example.com/form4/sets-exercises", urlQuizes: "https://example.com/form4/quizzes", urlPastYear: "https://example.com/form4/past-year" },
+        { name: "Logical Reasoning", urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn", urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view", urlQuizes: "https://quizizz.com/join?gc=33531104", urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o" }
+    ]
+};
+
 function updateTopics() {
     const form = document.getElementById("form").value;
     const topicSelect = document.getElementById("topic");
