@@ -34,15 +34,21 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-.links a {
-    display: block;
-    margin: 5px 0;
-    color: #1E90FF;
-    text-decoration: none;
-}
-.links a:hover {
-    text-decoration: underline;
-}
+#links {
+        margin-top: 20px;
+    }
+
+    #links a {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: blue;
+        text-decoration: none;
+    }
+
+    #links a:hover {
+        text-decoration: underline;
+    }
 
 /* Forum styling */
 .forum {
