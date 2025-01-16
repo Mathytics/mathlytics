@@ -1,4 +1,8 @@
 const topics = {
+    form2: [
+        { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" },
+        { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" }
+    ],
     form4: [
         { 
             name: "Logical Reasoning", 
