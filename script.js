@@ -41,6 +41,7 @@ function updateTopics() {
     const form = document.getElementById("form").value;
     const topicSelect = document.getElementById("topic");
     topicSelect.innerHTML = "<option value=''>-- Select Topic --</option>";
+    document.getElementById("subtopic").innerHTML = "<option value=''>-- Select Subtopic --</option>";
 
     if (form && topics[form]) {
         topics[form].forEach(topic => {
@@ -48,32 +49,41 @@ function updateTopics() {
             option.value = topic.name;
             option.textContent = topic.name;
             topicSelect.appendChild(option);
-
-            // Add subtopics if they exist
-            if (topic.subtopics) {
-                topic.subtopics.forEach(subtopic => {
-                    const subOption = document.createElement("option");
-                    subOption.value = subtopic.name;
-                    subOption.textContent = `-- ${subtopic.name}`;
-                    topicSelect.appendChild(subOption);
-                });
-            }
         });
+    }
+}
+
+function updateSubtopics() {
+    const form = document.getElementById("form").value;
+    const topicName = document.getElementById("topic").value;
+    const subtopicSelect = document.getElementById("subtopic");
+    subtopicSelect.innerHTML = "<option value=''>-- Select Subtopic --</option>";
+
+    if (form && topicName) {
+        const selectedTopic = topics[form].find(topic => topic.name === topicName);
+        if (selectedTopic && selectedTopic.subtopics) {
+            selectedTopic.subtopics.forEach(subtopic => {
+                const option = document.createElement("option");
+                option.value = subtopic.name;
+                option.textContent = subtopic.name;
+                subtopicSelect.appendChild(option);
+            });
+        }
     }
 }
 
 function showLinks() {
     const form = document.getElementById("form").value;
     const topicName = document.getElementById("topic").value;
+    const subtopicName = document.getElementById("subtopic").value;
     const linksDiv = document.getElementById("links");
 
     linksDiv.innerHTML = ""; // Clear previous links
 
-    if (form && topicName) {
+    if (form && (topicName || subtopicName)) {
         let selectedTopic = topics[form].find(topic => topic.name === topicName);
-        if (!selectedTopic) {
-            // Search subtopics
-            selectedTopic = topics[form].flatMap(topic => topic.subtopics || []).find(subtopic => subtopic.name === topicName);
+        if (subtopicName) {
+            selectedTopic = selectedTopic?.subtopics?.find(subtopic => subtopic.name === subtopicName);
         }
 
         if (selectedTopic) {
@@ -88,6 +98,7 @@ function showLinks() {
         linksDiv.textContent = "Please select both Form and Topic.";
     }
 }
+
 
 // LocalStorage for forum messages
 function loadMessages() {
