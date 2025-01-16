@@ -25,10 +25,35 @@ const topics = {
         },
         { 
             name: "Operation on Sets", 
-            urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn", 
-            urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view", 
-            urlQuizes: "https://quizizz.com/join?gc=33531104", 
-            urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o" 
+            subtopics: [
+                { 
+                    name: "4.1: Intersection on Sets", 
+                    urlNotes: "https://drive.google.com/file/d/1jR9jcmvvDsH7aYJuwt9VN1OqV_bZB5PW/view?usp=drive_link", 
+                    urlExercises: "https://drive.google.com/file/d/16LdEEX3EjjNPbjR9JqlOqgEvCer0xXj1/view?usp=drive_link", 
+                    urlQuizes: "https://quizizz.com/join/quiz/67606abff3407fd2a85125ff/start?studentShare=true", 
+                    urlPastYear: "https://drive.google.com/drive/folders/1R5WCZN02Nqs_k9JlJGItU9njGyu0igBa?usp=drive_link",
+                    urlRPH: "https://docs.google.com/document/d/1DCDMuq2uWgaeTGhJlePzk7LVULkBO92d/edit?usp=drive_link&ouid=100255213395062774814&rtpof=true&sd=true",
+                    urlInteractive:"https://venn-vision.vercel.app/"
+                },
+                { 
+                    name: "4.2: Union of Sets", 
+                    urlNotes: "https://drive.google.com/file/d/1xgzFA_qApr47FwkcBaAamjGckI5m7MRA/view?usp=drive_link", 
+                    urlExercises: "https://drive.google.com/file/d/1QOfFQ7xaGZKzaAjT3UCj9JThB-6FjMmS/view?usp=drive_link", 
+                    urlQuizes: "https://quizizz.com/join/quiz/67608d17adc567e4a6ad9d51/start?studentShare=true", 
+                    urlPastYear: "https://drive.google.com/drive/folders/1R5WCZN02Nqs_k9JlJGItU9njGyu0igBa?usp=drive_link",
+                    urlRPH: "https://docs.google.com/document/d/1DCDMuq2uWgaeTGhJlePzk7LVULkBO92d/edit?usp=drive_link&ouid=100255213395062774814&rtpof=true&sd=true",
+                    urlInteractive:"https://venn-vision.vercel.app/"
+                }
+                 { 
+                    name: "4.3: Combined Operations on Sets", 
+                    urlNotes: "https://drive.google.com/file/d/10xzPhm3wMOO49_geFyHgG4mn1xzmu4mJ/view?usp=drive_link", 
+                    urlExercises: "https://drive.google.com/file/d/1nLf8NDyRbVXf7CFjoUua0IvgAb4Hs5Ce/view?usp=drive_link", 
+                    urlQuizes: "https://quizizz.com/join/quiz/677b585e4e05e009e275d01b/start?studentShare=true", 
+                    urlPastYear: "https://drive.google.com/drive/folders/1R5WCZN02Nqs_k9JlJGItU9njGyu0igBa?usp=drive_link",
+                    urlRPH: "https://docs.google.com/document/d/1DCDMuq2uWgaeTGhJlePzk7LVULkBO92d/edit?usp=drive_link&ouid=100255213395062774814&rtpof=true&sd=true",
+                    urlInteractive:"https://venn-vision.vercel.app/"
+                }
+            ]
         }
     ]
 };
