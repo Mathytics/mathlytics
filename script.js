@@ -4,19 +4,36 @@ const topics = {
         { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" }
     ],
     form4: [
-        { name: "Operation on Sets", urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", urlExercises: "https://example.com/form4/sets-exercises", urlQuizes: "https://example.com/form4/quizzes", urlPastYear: "https://example.com/form4/past-year" },
-        { name: "Logical Reasoning", urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn", urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view", urlQuizes: "https://quizizz.com/join?gc=33531104", urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o" }
-    ]
-};
-
-const subtopics = {
-    4.1: [
-        { name: "Three Dimensional Shapes", urlNotes: "https://example.com/form2/3d-notes", urlExercises: "https://example.com/form2/3d-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" },
-        { name: "Cartesian Plane", urlNotes: "https://example.com/form2/cartesian-notes", urlExercises: "https://example.com/form2/cartesian-exercises", urlQuizes: "https://example.com/form2/quizzes", urlPastYear: "https://example.com/form2/past-year" }
-    ],
-    4.2: [
-        { name: "Operation on Sets", urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", urlExercises: "https://example.com/form4/sets-exercises", urlQuizes: "https://example.com/form4/quizzes", urlPastYear: "https://example.com/form4/past-year" },
-        { name: "Logical Reasoning", urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn", urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view", urlQuizes: "https://quizizz.com/join?gc=33531104", urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o" }
+        { 
+            name: "Operation on Sets", 
+            urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", 
+            urlExercises: "https://example.com/form4/sets-exercises", 
+            urlQuizes: "https://example.com/form4/quizzes", 
+            urlPastYear: "https://example.com/form4/past-year",
+            subtopics: [
+                { 
+                    name: "4.1: Three Dimensional Shapes", 
+                    urlNotes: "https://example.com/form2/3d-notes", 
+                    urlExercises: "https://example.com/form2/3d-exercises", 
+                    urlQuizes: "https://example.com/form2/quizzes", 
+                    urlPastYear: "https://example.com/form2/past-year" 
+                },
+                { 
+                    name: "4.2: Cartesian Plane", 
+                    urlNotes: "https://example.com/form2/cartesian-notes", 
+                    urlExercises: "https://example.com/form2/cartesian-exercises", 
+                    urlQuizes: "https://example.com/form2/quizzes", 
+                    urlPastYear: "https://example.com/form2/past-year" 
+                }
+            ]
+        },
+        { 
+            name: "Logical Reasoning", 
+            urlNotes: "https://drive.google.com/drive/folders/1G3YTL-3abMbn", 
+            urlExercises: "https://drive.google.com/file/d/1xO333B7WJRyVZD5o9HhI46HB4NcWp0kd/view", 
+            urlQuizes: "https://quizizz.com/join?gc=33531104", 
+            urlPastYear: "https://drive.google.com/drive/folders/1yp3FVYg_RXKXHmq6T3eWRGmAAEI-ie8o" 
+        }
     ]
 };
 
@@ -31,6 +48,16 @@ function updateTopics() {
             option.value = topic.name;
             option.textContent = topic.name;
             topicSelect.appendChild(option);
+
+            // Add subtopics if they exist
+            if (topic.subtopics) {
+                topic.subtopics.forEach(subtopic => {
+                    const subOption = document.createElement("option");
+                    subOption.value = subtopic.name;
+                    subOption.textContent = `-- ${subtopic.name}`;
+                    topicSelect.appendChild(subOption);
+                });
+            }
         });
     }
 }
@@ -43,7 +70,12 @@ function showLinks() {
     linksDiv.innerHTML = ""; // Clear previous links
 
     if (form && topicName) {
-        const selectedTopic = topics[form].find(topic => topic.name === topicName);
+        let selectedTopic = topics[form].find(topic => topic.name === topicName);
+        if (!selectedTopic) {
+            // Search subtopics
+            selectedTopic = topics[form].flatMap(topic => topic.subtopics || []).find(subtopic => subtopic.name === topicName);
+        }
+
         if (selectedTopic) {
             linksDiv.innerHTML = `
                 <a href="${selectedTopic.urlNotes}" target="_blank">View Notes</a>
