@@ -6,6 +6,10 @@ const topics = {
     form4: [
         { 
             name: "Logical Reasoning", 
+            urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", 
+            urlExercises: "https://example.com/form4/sets-exercises", 
+            urlQuizes: "https://example.com/form4/quizzes", 
+            urlPastYear: "https://example.com/form4/past-year",
             subtopics: [
                 { 
                     name: "3.1: Statements", 
@@ -29,6 +33,10 @@ const topics = {
         },
         { 
             name: "Operation on Sets", 
+            urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", 
+            urlExercises: "https://example.com/form4/sets-exercises", 
+            urlQuizes: "https://example.com/form4/quizzes", 
+            urlPastYear: "https://example.com/form4/past-year",
             subtopics: [
                 { 
                     name: "4.1: Intersection on Sets", 
