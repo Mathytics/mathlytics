@@ -10,7 +10,7 @@ const topics = {
             subtopics: [
                 { 
                     name: "3.1: Statements", 
-                    urlNotes: "https://drive.google.com/file/d/1XN9v0JmYM5CTCup2ZH_MknkLENjeWrZh/view?usp=drive_link", 
+                    urlNotes: "https://drive.google.com/file/d/1PuD4j8C25u5EFjTU2gBiur8gAJOf1gCz/view?usp=drive_link", 
                     urlExercises: "https://drive.google.com/file/d/1fH6DfVaYVW81luXEhGXeLAewIfz5ZVXY/view?usp=drive_link", 
                     urlQuizes: "https://quizizz.com/join?gc=26597520", 
                     urlPastYear: "https://drive.google.com/drive/folders/1U7QRjrQ3h-NyCJkrzAsbDJvg15AQWgem?usp=drive_link",
@@ -19,7 +19,7 @@ const topics = {
                 },
                 { 
                     name: "3.2: Arguments", 
-                    urlNotes: "https://drive.google.com/file/d/1TZwf4Cg0AYcJ6ZuT6GBE9QtKrkaOInb1/view?usp=drive_link", 
+                    urlNotes: "https://drive.google.com/file/d/1WuA9Voba2x4bE25Ckzb3UY27nXkdDekv/view?usp=drive_link", 
                     urlExercises: "https://drive.google.com/file/d/1igMXsahIq7amwOmNo8APHtu9lpZaYXzi/view?usp=drive_link", 
                     urlQuizes: "https://quizizz.com/join?gc=05945488", 
                     urlPastYear: "https://drive.google.com/drive/folders/1U7QRjrQ3h-NyCJkrzAsbDJvg15AQWgem?usp=drive_link",
