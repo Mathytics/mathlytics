@@ -5,7 +5,7 @@ const topics = {
     ],
     form4: [
         { 
-            name: "Logical Reasoning", 
+            name: "Chapter 3: Logical Reasoning", 
             urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", 
             urlExercises: "https://example.com/form4/sets-exercises", 
             urlQuizes: "https://example.com/form4/quizzes", 
@@ -32,7 +32,7 @@ const topics = {
             ]
         },
         { 
-            name: "Operation on Sets", 
+            name: "Chapter 4: Operation on Sets", 
             urlNotes: "https://drive.google.com/file/d/1NqdfACzqxtk0JufWLmfHZ50DWAYS6bTN/view", 
             urlExercises: "https://example.com/form4/sets-exercises", 
             urlQuizes: "https://example.com/form4/quizzes", 
