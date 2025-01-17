@@ -98,14 +98,13 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Chatbox Styling */
-/* Chatbox Styling */
-.chatbox {
+/* Contact Form */
+.contact-form {
   width: 300px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background-color: #ace2fa;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 20px;
   right: 20px;
@@ -113,57 +112,47 @@ button:hover {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  color :white;
+  
+}
 }
 
-.chat-header {
+.contact-form h3 {
+  margin-top: 0;
+  
+
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 94%;
+  margin-bottom: 5px;
+  margin-left: 3px;
+  padding: 5px;
+  border: 4px  #ccc;
+  border-radius: 5px;
+  
+}
+
+.contact-form button {
   background-color: #007bff;
   color: white;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 10px 10px 0 0;
-}
-
-.chat-body {
-  flex: 1; /* Ensures it takes the available space */
-  padding: 10px;
-  overflow-y: auto; /* Allows scrolling for long messages */
-  border-bottom: 1px solid #ccc;
-  color: black; /* Sets text color in chat body to black */
-}
-
-.chat-footer {
-  display: flex;
-  padding: 10px;
-  border-top: 1px solid #ccc;
-  background-color: #f9f9f9;
-}
-
-.chat-footer input {
-  flex: 1;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: black; /* Sets input text color to black */
-}
-
-.chat-footer input::placeholder {
-  color: black; /* Sets placeholder text color to black */
-}
-
-.chat-footer button {
-  margin-left: 5px;
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: black; /* Sets button text color to black */
-  border: none;
+  border: 1px solid ;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+    margin-left: 5px;
+  margin-bottom: 3px;
 }
 
-.chat-footer button:hover {
-  background-color: #0056b3;
-}
+.contact-form button:hover {
+  background-color: #3a3a59;
 
 .footer {
     position: fixed; /* Stick to the bottom */
